@@ -1,0 +1,32 @@
+<div class="mt-4">
+    <div class="container">
+        <h2>Danh sách nhân viên</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Hometown</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each users}}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.adress}}</td>
+                    <td>{{this.email}}</td>
+                    {{!-- <td><img src="{{this.image}}" alt="" width="100" height="100"></td> --}}
+                    <td>
+                        <a href="/course/edit/{{this._id}}" class="edit">Edit</a>
+                        <a href="#" data-toggle="modal" data-id="{{this._id}}"
+                            data-target="#delete_course_modal">Delete</a>
+                    </td>
+                </tr>
+
+                {{else}}
+                <h6 class="text-center">Bạn chưa có nhân viên nào. <a href="/course/create">Thêm nhân viên</a></h6>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
